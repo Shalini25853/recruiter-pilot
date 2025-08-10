@@ -16,6 +16,7 @@ export function App() {
       <main className="mx-auto max-w-5xl px-4 py-8">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/recruiter" element={<Recruiter />} />
           <Route path="/assess" element={<Assess />} />
         </Routes>
       </main>
@@ -31,6 +32,15 @@ function Home() {
       <div className="mt-4">
         <Link to="/assess"><Button>Go to Assess</Button></Link>
       </div>
+    </section>
+  )
+}
+
+function Recruiter() {
+  return (
+    <section>
+      <h1 className="text-2xl font-bold">Recruiter</h1>
+      <p className="text-muted-foreground mt-2">Welcome to the recruiter page.</p>
     </section>
   )
 }
