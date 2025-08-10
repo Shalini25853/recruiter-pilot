@@ -1,8 +1,5 @@
 import { HashRouter, Routes, Route, Link } from 'react-router-dom'
-import Index from './pages/Index'
-import Recruiter from './pages/Recruiter'
-import Assess from './pages/Assess'
-import NotFound from './pages/NotFound'
+import Assess from '@/pages/Assess'
 import { Button } from '@/components/ui/button'
 
 export function App() {
@@ -18,13 +15,22 @@ export function App() {
       </header>
       <main className="mx-auto max-w-5xl px-4 py-8">
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/recruiter" element={<Recruiter />} />
+          <Route path="/" element={<Home />} />
           <Route path="/assess" element={<Assess />} />
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </HashRouter>
   )
 }
 
+function Home() {
+  return (
+    <section>
+      <h1 className="text-2xl font-bold">Candidate Assessment</h1>
+      <p className="text-muted-foreground mt-2">Use the Assess page to try voice interview, TTS and transcription.</p>
+      <div className="mt-4">
+        <Link to="/assess"><Button>Go to Assess</Button></Link>
+      </div>
+    </section>
+  )
+}
